@@ -6,11 +6,11 @@ public class MenuViewer {
 	public static Scanner keyboard = new Scanner(System.in);
 
 	public static void showMenu() {
-		System.out.println("¼±ÅÃÇÏ¼¼¿ä ..");
-		System.out.println("1. µ¥ÀÌÅÍ ÀÔ·Â ");
-		System.out.println("2. µ¥ÀÌÅÍ °Ë»ö ");
-		System.out.println("3. µ¥ÀÌÅÍ »èÁ¦ ");
-		System.out.println("4. ÇÁ·Î±×·¥ Á¾·á ");
-		System.out.print("¼±ÅÃ : ");
+		System.out.println("ì„ íƒí•˜ì„¸ìš” ..");
+		System.out.println("1. ë°ì´í„° ì…ë ¥ ");
+		System.out.println("2. ë°ì´í„° ê²€ìƒ‰ ");
+		System.out.println("3. ë°ì´í„° ì‚­ì œ ");
+		System.out.println("4. í”„ë¡œê·¸ë¨ ì¢…ë£Œ ");
+		System.out.print("ì„ íƒ : ");
 	}
 }

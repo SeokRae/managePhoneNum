@@ -25,9 +25,9 @@ public class PhoneBookManager {
 
 	private PhoneInfo readFriendInfo() {
 
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		String name = MenuViewer.keyboard.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String phone = MenuViewer.keyboard.nextLine();
 
 		return new PhoneInfo(name, phone);
@@ -35,13 +35,13 @@ public class PhoneBookManager {
 
 	private PhoneInfo readUnivFriendInfo() {
 
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		String name = MenuViewer.keyboard.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String phone = MenuViewer.keyboard.nextLine();
-		System.out.print("Àü°ø : ");
+		System.out.print("ì „ê³µ : ");
 		String major = MenuViewer.keyboard.nextLine();
-		System.out.print("ÇĞ³â : ");
+		System.out.print("í•™ë…„ : ");
 		int year = MenuViewer.keyboard.nextInt();
 		MenuViewer.keyboard.nextLine();
 
@@ -49,11 +49,11 @@ public class PhoneBookManager {
 	}
 
 	private PhoneInfo readCompanyFriendInfo() {
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		String name = MenuViewer.keyboard.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String phone = MenuViewer.keyboard.nextLine();
-		System.out.print("È¸»ç : ");
+		System.out.print("íšŒì‚¬ : ");
 		String company = MenuViewer.keyboard.nextLine();
 
 		return new PhoneCompanyInfo(name, phone, company);
@@ -61,9 +61,9 @@ public class PhoneBookManager {
 	}
 
 	public void inputData() throws MenuChoiceException {
-		System.out.println("µ¥ÀÌÅÍ ÀÔ·ÂÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.println("1. ÀÏ¹İ, 2. ´ëÇĞ, 3. È¸»ç");
-		System.out.print("¼±ÅÃ >> ");
+		System.out.println("ë°ì´í„° ì…ë ¥ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
+		System.out.println("1. ì¼ë°˜, 2. ëŒ€í•™, 3. íšŒì‚¬");
+		System.out.print("ì„ íƒ >> ");
 
 		int choice = MenuViewer.keyboard.nextInt();
 		MenuViewer.keyboard.nextLine();
@@ -72,8 +72,7 @@ public class PhoneBookManager {
 		if (choice < INPUT_SELECT.NORMAL || choice > INPUT_SELECT.COMPANY) {
 			throw new MenuChoiceException(choice);
 		}
-		
-		
+
 		switch (choice) {
 		case INPUT_SELECT.NORMAL:
 			info = readFriendInfo();
@@ -86,7 +85,7 @@ public class PhoneBookManager {
 			break;
 		}
 		infoStorage[curCnt++] = info;
-		System.out.println("µ¥ÀÌÅÍ ÀÔ·ÂÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. \n");
+		System.out.println("ë°ì´í„° ì…ë ¥ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. \n");
 	}
 
 	private int search(String name) {
@@ -101,7 +100,7 @@ public class PhoneBookManager {
 	}
 
 	// public void allData() {
-	// System.out.println("¸ğµç µ¥ÀÌÅÍ Ãâ·Â");
+	// System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
 	// // for (PhoneInfo idx : infoStorage) {
 	// // infoStorage[idx].showPhoneInfo();
 	// // }
@@ -115,37 +114,37 @@ public class PhoneBookManager {
 	// }
 
 	public void searchData() {
-		System.out.println("µ¥ÀÌÅÍ °Ë»öÀ» ½ÃÀÛÇÕ´Ï´Ù..");
+		System.out.println("ë°ì´í„° ê²€ìƒ‰ì„ ì‹œì‘í•©ë‹ˆë‹¤..");
 
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		String name = MenuViewer.keyboard.nextLine();
 
 		int dataIdx = search(name);
 		if (dataIdx < 0) {
-			System.out.println("ÇØ´çÇÏ´Â µ¥ÀÌÅÍ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. \n");
+			System.out.println("í•´ë‹¹í•˜ëŠ” ë°ì´í„°ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. \n");
 
 		} else {
 			infoStorage[dataIdx].showPhoneInfo();
-			System.out.println("µ¥ÀÌÅÍ °Ë»öÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. \n");
+			System.out.println("ë°ì´í„° ê²€ìƒ‰ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. \n");
 		}
 	}
 
 	public void deleteData() {
-		System.out.println("µ¥ÀÌÅÍ »èÁ¦¸¦ ½ÃÀÛÇÕ´Ï´Ù..");
+		System.out.println("ë°ì´í„° ì‚­ì œë¥¼ ì‹œì‘í•©ë‹ˆë‹¤..");
 
-		System.out.println("ÀÌ¸§ : ");
+		System.out.println("ì´ë¦„ : ");
 		String name = MenuViewer.keyboard.nextLine();
 
 		int dataIdx = search(name);
 		if (dataIdx < 0) {
-			System.out.println("ÇØ´çÇÏ´Â µ¥ÀÌÅÍ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. \n");
+			System.out.println("í•´ë‹¹í•˜ëŠ” ë°ì´í„°ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. \n");
 		} else {
 
 			for (int idx = dataIdx; idx < (curCnt - 1); idx++) {
 				infoStorage[idx] = infoStorage[idx + 1];
 			}
 			curCnt--;
-			System.out.println("µ¥ÀÌÅÍ »èÁ¦°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù. \n");
+			System.out.println("ë°ì´í„° ì‚­ì œê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤. \n");
 
 		}
 	}

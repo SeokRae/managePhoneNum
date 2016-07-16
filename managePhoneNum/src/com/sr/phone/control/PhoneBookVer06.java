@@ -13,17 +13,20 @@ public class PhoneBookVer06 {
 
 		while (true) {
 			try {
+				// ë©”ë‰´ ë©”ì†Œë“œ í˜¸ì¶œ
 				MenuViewer.showMenu();
+				// ë©”ë‰´ ì„ íƒì„ ìœ„í•œ Scanner ì‚¬ìš©
 				choice = MenuViewer.keyboard.nextInt();
+				// Scanner ì…ë ¥ ì‹œ
+				// ìˆ«ì + enterKeyì—ì„œ enterKeyë¥¼ ì œê±° í•˜ê¸° ìœ„í•œ nextLine();
 				MenuViewer.keyboard.nextLine();
-				// ex) 7 + enter
-				// nextInt¸¦ ÅëÇØ 7ÀÌ ÀĞÇôÁø´Ù.
-				// nextLineÀ» ÅëÇØ enter°¡ ÀĞÇôÁø ÈÄ¿¡ ¹ö·ÁÁü
-				// °á±¹ nextLineÀº enterÅ°¸¦ ÀĞ¾îµéÀÏ ¶§±îÁö µ¥ÀÌÅÍ¸¦ ÀĞ´Â ¸Ş¼Òµå
-
+				// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ìê°€ ë©”ë‰´ ë²”ìœ„ ë°–ì˜ ì„ íƒì¼ ê²½ìš°
+				// ì˜ˆì™¸ì²˜ë¦¬
 				if (choice < INIT_MENU.INPUT || choice > INIT_MENU.EXIT) {
 					throw new MenuChoiceException(choice);
 				}
+				// ì…ë ¥ëœ ìˆ«ìê°€ ë©”ë‰´ ë²”ìœ„ ë‚´ì— ì…ë ¥ì¼ ê²½ìš°
+				// ì¡°ê±´ë¬¸ ì‹¤í–‰
 				switch (choice) {
 				case INIT_MENU.INPUT:
 					manager.inputData();
@@ -35,12 +38,12 @@ public class PhoneBookVer06 {
 					manager.deleteData();
 					break;
 				case INIT_MENU.EXIT:
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·á ÇÕ´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 					return;
 				}
 			} catch (MenuChoiceException e) {
 				e.showWrongChoice();
-				System.out.println("¸Ş´º ¼±ÅÃÀ» Ã³À½ºÎÅÍ ´Ù½Ã ÁøÇàÇÕ´Ï´Ù.");
+				System.out.println("ï¿½Ş´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 			}
 		}
 	}

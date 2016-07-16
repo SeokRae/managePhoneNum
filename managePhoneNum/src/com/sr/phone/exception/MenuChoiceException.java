@@ -8,12 +8,12 @@ public class MenuChoiceException extends Exception {
 	int wrongChoice;
 
 	public MenuChoiceException(int choice) {
-		super("Àß¸øµÈ ¼±ÅÃÀÌ ÀÌ·ç¾îÁ³½À´Ï´Ù.");
+		super("ì˜ëª»ëœ ì„ íƒì´ ì´ë£¨ì–´ì¡ŒìŠµë‹ˆë‹¤.");
 		wrongChoice = choice;
 
 	}
 
 	public void showWrongChoice() {
-		System.out.println(wrongChoice + " ¿¡ ÇØ´çÇÏ´Â ¼±ÅÃÀº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+		System.out.println(wrongChoice + " ì— í•´ë‹¹í•˜ëŠ” ì„ íƒì€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 	}
 }
